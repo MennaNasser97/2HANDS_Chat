@@ -19,6 +19,7 @@ public class User {
     public String profile_cover;
     public String job_title;
     public int ratings_count;
+    public String onlineStatus;
 
     public User(
                 String first_name,

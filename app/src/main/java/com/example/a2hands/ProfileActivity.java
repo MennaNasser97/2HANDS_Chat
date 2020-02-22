@@ -16,10 +16,12 @@ import android.os.Bundle;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.example.a2hands.ChatPackage.ChatActivity;
 import com.example.a2hands.homePackage.PostFragment;
 import com.example.a2hands.homePackage.RatingFragment;
 import com.example.a2hands.homePackage.RatingsActivity;
@@ -50,6 +52,7 @@ public class ProfileActivity extends AppCompatActivity  implements PostFragment.
     ImageView profilePic;
     Button profileEditBtn;
     Button profileFollowBtn;
+    private ImageButton sendMessage;
     private StorageReference mStorageRef;
     private FirebaseFirestore db;
     public String uid;
@@ -88,6 +91,16 @@ public class ProfileActivity extends AppCompatActivity  implements PostFragment.
         profileFollowBtn = findViewById(R.id.profileFollowBtn);
         ratingBar = findViewById(R.id.ratingBarGet);
         ratings_count = findViewById(R.id.ratings_count);
+        sendMessage=findViewById(R.id.sendmessageButton);
+
+        sendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, ChatActivity.class);
+                intent.putExtra("hisUid", uid);
+                startActivity(intent);
+            }
+        });
 
         // setup
         setSupportActionBar(toolbar);

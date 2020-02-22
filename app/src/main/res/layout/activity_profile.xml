@@ -112,7 +112,7 @@
                         android:orientation="horizontal">
 
                         <ImageButton
-                            android:id="@+id/imageButton"
+                            android:id="@+id/sendmessageButton"
                             android:layout_width="70dp"
                             android:layout_height="50dp"
                             android:background="#00000000"
